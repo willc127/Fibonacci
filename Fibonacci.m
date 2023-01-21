@@ -1,16 +1,15 @@
 function [fib, ratio] = Fibonacci(n)
-  clc; close;
-  fib(1)=1;
+  clc;
+  fib(1)=0;
   fib(2)=1;
   for i=2:n-1
     fib(i+1)=fib(i)+fib(i-1);
     ratio(i,:)=fib(i)/fib(i-1);
-
   end
+
   ratio(n,:)=fib(n)/fib(n-1);
   N = [1:n];
   cumulFib = cumsum(fib);
-  summary = [fib',cumulFib', ratio]
 
   fig1 = figure(1);
   txt =  ['Fibonacci sequence '];
@@ -24,6 +23,7 @@ function [fib, ratio] = Fibonacci(n)
   legend('location', 'northwest', 'fontsize', 12);
   legend show
   legend boxoff
+  waitfor(fig1) %optional for using in vscode
 
   fig2 = figure(2);
   plot(N,ratio', '-b')
@@ -31,6 +31,9 @@ function [fib, ratio] = Fibonacci(n)
   phi = 1.618034;
   plot([1:n],[ones(n)*phi], '--k')
   axis([1 n+1 0 max(ratio)*1.1]);
+  xlabel('Sequence number')
+  ylabel('Sequence Ratio')
+  waitfor(fig2) %optional for using in vscode
 
-  print (fig1, "Fibonacci.png");
-  print (fig2, "golden_ratio.png");
+  %print(fig1, "Fibonacci.png");
+  %print(fig2, "golden_ratio.png");
