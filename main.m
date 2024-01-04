@@ -1,2 +1,2 @@
 clc
-fib_sequence = Fibonacci(20)
+fib_sequence = Fibonacci(10)
