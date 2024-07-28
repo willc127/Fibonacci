@@ -1,11 +1,11 @@
 # Fibonacci Sequence Calculator
-This MATLAB code calculates the Fibonacci sequence up to a specified term and visualizes the results.
+This python code calculates the Fibonacci sequence up to a specified term and visualizes the results.
 
 ## Usage
-```matlab
+```python
 % Example Usage:
 n = 10; % Replace with desired term
-[fib, ratio] = Fibonacci(n);
+fib, ratio = fibonacci(n)
 ```
 ```bash
 fib_sequence =
